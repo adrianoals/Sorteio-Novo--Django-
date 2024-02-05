@@ -153,6 +153,22 @@ h1 {
     font-weight: bold;
 }
 
+.btn-white {
+    background-color: white;
+    color: #5E17EB;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.btn-white:hover {
+    color: orangered; /* Cor do texto ao passar o mouse */
+}
+
+.btn-white:active {
+    background-color: #5E17EB; /* Cor de fundo ao clicar */
+    color: yellow; /* Cor do texto ao clicar */
+}
+
 .btn-yellow {
     background-color: #EEA302;
     /* color: #5E17EB; */
