@@ -166,10 +166,10 @@ h1 {
     width: 120px !important; 
 }
 
-footer{
-    background-image: url(/Front/Assets/images/silhueta_cidade_1200x1200.png);
-}
 
+footer{
+    background-image: url('/static/assets/images/silhueta_cidade_1200x1200.png');
+}
 
 
 
