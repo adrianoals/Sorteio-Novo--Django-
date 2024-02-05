@@ -121,6 +121,17 @@ h1 {
     /* background-image: url(/Front/Assets/images/vagas.png); */
 }
 
+#container-6 { 
+    margin: 0;         
+    padding: 0;
+    min-height: 500px;
+    
+    color: white;
+    background-color: #5E17EB;
+    
+    /* background-image: url(/Front/Assets/images/vagas.png); */
+}
+
 #container-solucoes { 
     margin: 0;         
     padding: 0;
