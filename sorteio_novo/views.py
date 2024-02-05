@@ -3,8 +3,8 @@ from sorteio_novo.models import ListaDePresenca
 import random
 from django.contrib import messages
 
-def index(request):
-    	return render(request, 'sorteio_novo/index.html')
+def inicio_sorteio(request):
+    	return render(request, 'sorteio_novo/inicio_sorteio.html')
 
 def presenca(request):
     if request.method == 'POST':

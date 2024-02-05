@@ -7,8 +7,16 @@
 //     var containerSorteio = document.getElementById('container-sorteio');
 //     var formularioPresenca = document.getElementById('formulario-presenca');
 
+//     // Verifica se os elementos foram encontrados
+//     if (!titulo || !botaoIniciar || !containerSorteio || !formularioPresenca) {
+//         console.log('Um ou mais elementos não foram encontrados');
+//         return;
+//     }
+
 //     // Adiciona um ouvinte de clique ao botão "Iniciar"
 //     botaoIniciar.addEventListener('click', function () {
+//         console.log('O botão foi clicado');  // Verifica se o evento de clique está funcionando
+
 //         // Atualiza o conteúdo do <h1> antes de iniciar o sorteio
 //         titulo.textContent = 'INICIANDO SORTEIO!';
 
@@ -19,3 +27,4 @@
 //         formularioPresenca.style.display = 'block';
 //     });
 // });
+

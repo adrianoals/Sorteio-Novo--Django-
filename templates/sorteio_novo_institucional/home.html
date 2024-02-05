@@ -1,102 +1,84 @@
 {% extends 'sorteio_novo_institucional/base.html' %}
 {% load static %}
 {% block content %}
-<div class="background-1">
-    <div class="container" id="container-1">
-        <header class="d-flex flex-wrap justify-content-center py-3 mb-4">
-            <div class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                <img src="/Front/Assets/images/Logo 500x500.svg" class="bi me-2" width="70" height="70" alt="">
-                <span class="fs-4">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-                <span class="fs-4">Sorteio Novo</span>
-                <span class="fs-4">&nbsp;&nbsp;|&nbsp;&nbsp;</span>
-            </div>
-            <ul class="nav">
-                <li class="nav-item"><a href="/Front/home3.html" class="nav-link" aria-current="page">Home</a></li>
-                <li class="nav-item"><a href="/Front/solucoes.html" class="nav-link" aria-current="page">Soluções</a></li>
-                <!-- <li class="nav-item"><a href="#" class="nav-link" aria-current="page">Login</a></li> -->
-                <li class="nav-item"><a href="/Front/contato.html" class="btn  btn-white" aria-current="page">Orçamento</a></li>
-            </ul>
-        </header>
-    </div>
-</div>     
 
-<main>
-    <div class="container-fluid mb-5" id="container-2">
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-6 align-items-center">
-                <h1 class=" mb-0 mt-3 pt-3 font_home_h1" id="titulo">Conduzindo Sorteios <br>com Clareza e Equidade</h1>
+    <main>
+        <div class="container-fluid mb-5" id="container-2">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-6 align-items-center">
+                    <h1 class=" mb-0 mt-3 pt-3 font_home_h1" id="titulo">Conduzindo Sorteios <br>com Clareza e Equidade</h1>
+                </div>
+                <div class="col-md-4"></div>
             </div>
-            <div class="col-md-4"></div>
-        </div>
-    
-        <div class="row">
-            <!-- Coluna para o texto -->
-            <div class="col-md-2"></div>
-            <div class="col-md-4">
-                <h4 class="mt-5 mb-4 p-2">Bem-vindo à Sorteio Novo, a solução inovadora para a gestão de vagas de estacionamento em condomínios. Nossa empresa foi fundada com o objetivo de trazer transparência e equidade na alocação de vagas de garagem, um desafio comum enfrentado por muitos condomínios. 
-                </h4>
-                <h4>Com nossa tecnologia avançada e metodologia comprovada, realizamos sorteios justos e imparciais, garantindo que todos os moradores tenham oportunidades iguais de acessar vagas de estacionamento desejáveis. Nosso sistema é fácil de usar e se integra perfeitamente à gestão do condomínio, proporcionando uma experiência tranquila e eficiente.</h4>
-            </div>
-            <!-- Coluna para a imagem de background -->
-            <div class="col-md-6 mt-4 p-2" id="coluna-2">
-                <img class="text-center" src="/Front/Assets/images/Logo 500x500rocho.svg" alt="logo_rocho">
-            </div>
-        </div>
-    </div>
-    
-    <div class="container-fluid mt-0" id="container-3">
-        <div class="row mt-0">
-            <div class="col-md-2 order-md-1"></div>
-            <div class="col-md-4 order-md-3 mt-4 align-items-center">
-                <h4 class="texto-margem">Visando simplificar sua assembleia e proporcionar conforto e transparência aos moradores, realizamos sorteios eletrônicos de vagas de forma rápida e eficiente.</h4>
-                
-                <h4 class="mt-4">Nos dedicamos a melhorar a convivência em condomínios, promovendo harmonia e satisfação entre os moradores. Confie em nós para tornar o processo de alocação de vagas de garagem justo e sem complicações.</h4>
-            </div>
-            <div class="col-md-1 order-md"></div>
-            <div class="col-md-3 mt-5">
-                <img src="/Front/Assets/images/Conference-pana (1).png" alt="">
+        
+            <div class="row">
+                <!-- Coluna para o texto -->
+                <div class="col-md-2"></div>
+                <div class="col-md-4">
+                    <h4 class="mt-5 mb-4 p-2">Bem-vindo à Sorteio Novo, a solução inovadora para a gestão de vagas de estacionamento em condomínios. Nossa empresa foi fundada com o objetivo de trazer transparência e equidade na alocação de vagas de garagem, um desafio comum enfrentado por muitos condomínios. 
+                    </h4>
+                    <h4>Com nossa tecnologia avançada e metodologia comprovada, realizamos sorteios justos e imparciais, garantindo que todos os moradores tenham oportunidades iguais de acessar vagas de estacionamento desejáveis. Nosso sistema é fácil de usar e se integra perfeitamente à gestão do condomínio, proporcionando uma experiência tranquila e eficiente.</h4>
+                </div>
+                <!-- Coluna para a imagem de background -->
+                <div class="col-md-6 mt-4 p-2" id="coluna-2">
+                    <img class="text-center" src="{% static '/assets/images/Logo-500x500_transparente.svg' %}" alt="logo_rocho">
+                </div>
             </div>
         </div>
-    </div>
+        
+        <div class="container-fluid mt-0" id="container-3">
+            <div class="row mt-0">
+                <div class="col-md-2 order-md-1"></div>
+                <div class="col-md-4 order-md-3 mt-4 align-items-center">
+                    <h4 class="texto-margem">Visando simplificar sua assembleia e proporcionar conforto e transparência aos moradores, realizamos sorteios eletrônicos de vagas de forma rápida e eficiente.</h4>
+                    
+                    <h4 class="mt-4">Nos dedicamos a melhorar a convivência em condomínios, promovendo harmonia e satisfação entre os moradores. Confie em nós para tornar o processo de alocação de vagas de garagem justo e sem complicações.</h4>
+                </div>
+                <div class="col-md-1 order-md"></div>
+                <div class="col-md-3 mt-5">
+                    <img src="/Front/Assets/images/Conference-pana (1).png" alt="">
+                </div>
+            </div>
+        </div>
 
-    <div class="container-fluid mt-0" id="container-4">
-        <div class="row mt-5">
-            <div class="col-md-2 order-md-1"></div>
-            <div class="col-md-4 order-md-1 mt-4 align-items-center">
-                <h2 class="texto-margem">Pronto para levar seus sorteios para o próximo nível?</h2>
-                <h4 class="mt-4">Clique no botão abaixo e descubra todas as modalidades de sorteios que nosso sistema pode oferecer, detalhadas na próxima página. Com a Sorteio Novo, a sorte está sempre ao seu lado.</h4>
-                <button type="submit" class="btn rounded-circle btn-yellow wh-100 mt-4 ">Nossas Soluções</button>
-            </div>
-            <div class="col-md-1 order-md-4"></div>
-            <div class="col-md-3 order-md-3 mt-5">
-                <img src="/Front/Assets/images/next_steps.gif" alt="">
+        <div class="container-fluid mt-0" id="container-4">
+            <div class="row mt-5">
+                <div class="col-md-2 order-md-1"></div>
+                <div class="col-md-4 order-md-1 mt-4 align-items-center">
+                    <h2 class="texto-margem">Pronto para levar seus sorteios para o próximo nível?</h2>
+                    <h4 class="mt-4">Clique no botão abaixo e descubra todas as modalidades de sorteios que nosso sistema pode oferecer, detalhadas na próxima página. Com a Sorteio Novo, a sorte está sempre ao seu lado.</h4>
+                    <button type="submit" class="btn rounded-circle btn-yellow wh-100 mt-4 ">Nossas Soluções</button>
+                </div>
+                <div class="col-md-1 order-md-4"></div>
+                <div class="col-md-3 order-md-3 mt-5">
+                    <img src="/Front/Assets/images/next_steps.gif" alt="">
+                </div>
             </div>
         </div>
-    </div>
-    
-    <div class="container-fluid mb-5" id="container-5">
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-6 align-items-center">
-                <h1 class="mb-0 mt-3 pt-3 font_home_h1" id="titulo">Porque Sorteio Novo?</h1>
+        
+        <div class="container-fluid mb-5" id="container-5">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-6 align-items-center">
+                    <h1 class="mb-0 mt-3 pt-3 font_home_h1" id="titulo">Porque Sorteio Novo?</h1>
+                </div>
+                <div class="col-md-4"></div>
             </div>
-            <div class="col-md-4"></div>
-        </div>
-        <div class="row">
-            <!-- Coluna para o vídeo -->
-            <div class="col-md-3"></div>
-            <div class="col-md-6 mt-4 p-2">
-                <video width="100%" height="auto" controls>
-                    <source src="\Front\Assets\videos\Vídeo.mp4" type="video/mp4">
-                    Seu navegador não suporta o elemento de vídeo.
-                </video>
+            <div class="row">
+                <!-- Coluna para o vídeo -->
+                <div class="col-md-3"></div>
+                <div class="col-md-6 mt-4 p-2">
+                    <video width="100%" height="auto" controls>
+                        <source src="\Front\Assets\videos\Vídeo.mp4" type="video/mp4">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                </div>
+                <div class="col-md-3"></div>
             </div>
-            <div class="col-md-3"></div>
         </div>
-    </div>
-    
-</main>
+        
+    </main>
 
 
 {% endblock %}
