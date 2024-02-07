@@ -1,4 +1,5 @@
 body {
+    /* background-color: #5E17EB; */
     color: #FFFFFF;
     margin: 0;
     padding: 0;
@@ -18,14 +19,29 @@ h1 {
  
 .background-1 {
     position: fixed;
+    margin: 0;
+    padding: 0;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10; 
     /* Para garantir que o conteúdo sobreposto seja visível */
-    background-color: rgba(94, 23, 235, 0.9);   
+    background-color: rgba(94, 23, 235, 0.9);
+
+    
+    /* background-image: url(/Front/Assets/images/silhueta_cidade_1200x150.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; */
+   
 } 
 
+.groundimage{
+    background-image: url(/Front/Assets/images/driver.svg);
+    /* background-size: cover; */
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 .row{
     margin: 5px;
@@ -43,7 +59,6 @@ h1 {
     border: 2px solid #000;
     border-radius: 15px;
 }
-
 
 /* Estilo dos links */
 
@@ -64,6 +79,7 @@ h1 {
     color: yellow; 
 } 
 
+
 /* Estilo para o link em foco */
 .nav-link:focus {
     color: yellow;
@@ -74,30 +90,57 @@ h1 {
     padding: 0;
     color: #5E17EB;
     background-color: #FFFFFF;
+
+    /*  
+    background-image: url(/Front/Assets/images/silhueta_cidade_1200x150_branco.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    */
+    
+
 }
 
 #container-3 { 
     margin: 0;         
     padding: 0;
     min-height: 500px;
+    
+    /* color: white;
+    background-color: #5E17EB; */
+    
     color: #5E17EB; 
     background-color: white;
+    
+    /* background-image: url(/Front/Assets/images/vagas.png); */
 }
 
 #container-4 { 
     margin: 0;         
     padding: 0;
     min-height: 500px;
+     
     color: white;
     background-color: #5E17EB; 
+    
+    /* color: #5E17EB;
+    background-color: white; */
+    
+    /* background-image: url(/Front/Assets/images/vagas.png); */
 }
 
 #container-5 { 
     margin: 0;         
     padding: 0;
     min-height: 500px;
+/*     
+    color: white;
+    background-color: #5E17EB; */
+    
     color: #5E17EB;
     background-color: white;
+    
+    /* background-image: url(/Front/Assets/images/vagas.png); */
 }
 
 #container-solucoes { 
@@ -107,6 +150,9 @@ h1 {
     color: #5E17EB;
     background-color: white;
 }
+
+
+
 
 .font_subtitle {
     font-family: 'Kanit', sans-serif;
@@ -120,30 +166,17 @@ h1 {
 }
 
 .texto-margem{
+    /* margin-top: 500px; */
     padding-top: 80px;
 }
 
+
 .btn-white {
+    /* background-color: #EEA302; */
     background-color: white;
     color: #5E17EB;
     font-size: 22px;
     font-weight: bold;
-}
-
-.btn-white {
-    background-color: white;
-    color: #5E17EB;
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.btn-white:hover {
-    color: orangered; /* Cor do texto ao passar o mouse */
-}
-
-.btn-white:active {
-    background-color: #5E17EB; /* Cor de fundo ao clicar */
-    color: yellow; /* Cor do texto ao clicar */
 }
 
 .btn-yellow {
@@ -159,12 +192,19 @@ h1 {
     width: 120px !important; 
 }
 
+.col_white{
+    background-color: white !important;
+}
+
 footer{
-    background-image: url('/static/assets/images/silhueta_cidade_1200x1200.png');
+    background-image: url(/Front/Assets/images/silhueta_cidade_1200x1200.png);
 }
 
 
-
+.xisto{
+    position: relative; 
+    margin-top: -150px;
+}
 
 
 
