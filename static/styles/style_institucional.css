@@ -19,8 +19,6 @@ h1 {
  
 .background-1 {
     position: fixed;
-    margin: 0;
-    padding: 0;
     top: 0;
     left: 0;
     width: 100%;
@@ -35,13 +33,6 @@ h1 {
     background-repeat: no-repeat; */
    
 } 
-
-.groundimage{
-    background-image: url(/Front/Assets/images/driver.svg);
-    /* background-size: cover; */
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
 .row{
     margin: 5px;
@@ -78,7 +69,6 @@ h1 {
 .nav-link:active {
     color: yellow; 
 } 
-
 
 /* Estilo para o link em foco */
 .nav-link:focus {
@@ -143,6 +133,17 @@ h1 {
     /* background-image: url(/Front/Assets/images/vagas.png); */
 }
 
+#container-6 { 
+    margin: 0;         
+    padding: 0;
+    min-height: 500px;
+    
+    color: white;
+    background-color: #5E17EB;
+    
+    /* background-image: url(/Front/Assets/images/vagas.png); */
+}
+
 #container-solucoes { 
     margin: 0;         
     padding: 0;
@@ -150,9 +151,6 @@ h1 {
     color: #5E17EB;
     background-color: white;
 }
-
-
-
 
 .font_subtitle {
     font-family: 'Kanit', sans-serif;
@@ -169,7 +167,6 @@ h1 {
     /* margin-top: 500px; */
     padding-top: 80px;
 }
-
 
 .btn-white {
     /* background-color: #EEA302; */
@@ -192,19 +189,19 @@ h1 {
     width: 120px !important; 
 }
 
-.col_white{
-    background-color: white !important;
+
+/* Para dispositivos com largura de tela menor que 768px */
+@media (max-width: 770px) {
+    .my-image {
+        display: none;
+    }
 }
 
 footer{
-    background-image: url(/Front/Assets/images/silhueta_cidade_1200x1200.png);
+    background-image: url('/static/assets/images/silhueta_cidade_1200x1200.png');
 }
 
 
-.xisto{
-    position: relative; 
-    margin-top: -150px;
-}
 
 
 

@@ -9,3 +9,6 @@ def solucoes(request):
 
 def orcamento(request):
     	return render(request, 'sorteio_novo_institucional/orcamento.html')
+
+def contato(request):
+    	return render(request, 'sorteio_novo_institucional/contato.html')

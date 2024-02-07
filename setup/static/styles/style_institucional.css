@@ -35,8 +35,20 @@ h1 {
 } 
 
 .row{
+    margin: 5px;
+    padding: 5px;
+}
+
+.margem-up{
+    padding-top: 100px;
+}
+
+.purpleground{
     margin: 0;
     padding: 0;
+    background-color: #5E17EB;
+    border: 2px solid #000;
+    border-radius: 15px;
 }
 
 /* Estilo dos links */
@@ -177,6 +189,13 @@ h1 {
     width: 120px !important; 
 }
 
+
+/* Para dispositivos com largura de tela menor que 768px */
+@media (max-width: 770px) {
+    .my-image {
+        display: none;
+    }
+}
 
 footer{
     background-image: url('/static/assets/images/silhueta_cidade_1200x1200.png');
