@@ -33,7 +33,7 @@ def orcamento(request):
                  )
 
             # Adicionar mensagem de sucesso
-            messages.success(request, 'Mensagem enviada com sucesso!')
+            messages.success(request, '*Mensagem enviada com sucesso!')
 
             # Redirecionar para a mesma página após o POST bem-sucedido
             return redirect('orcamento')
