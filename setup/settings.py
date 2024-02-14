@@ -30,7 +30,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # DEBUG = True
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['18.117.94.6', 'sorteionovo.com.br', 'www.sorteionovo.com.br']
 
 
 # Application definition
