@@ -28,6 +28,9 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
+# ALLOWED_HOSTS = ['*']
+
+
 DEBUG = False
 
 ALLOWED_HOSTS = ['18.117.94.6', 'sorteionovo.com.br', 'www.sorteionovo.com.br']
