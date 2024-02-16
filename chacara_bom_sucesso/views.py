@@ -56,7 +56,7 @@ from .models import Sorteio
 
 def exportar_para_excel(request):
     # Construir o caminho completo para o arquivo modelo
-    caminho_modelo = 'static/assets/modelos/sorteio_novo2.xlsx' 
+    caminho_modelo = 'static/assets/modelos/sorteio_novo1.xlsx' 
 
     # Carregar o workbook do modelo
     wb = load_workbook(caminho_modelo)
