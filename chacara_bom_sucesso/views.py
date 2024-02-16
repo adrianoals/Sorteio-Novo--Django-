@@ -83,3 +83,7 @@ def exportar_para_excel(request):
     wb.save(response)
 
     return response
+
+
+def zerar(request):
+    	return render(request, 'chacara_bom_sucesso/zerar.html')
