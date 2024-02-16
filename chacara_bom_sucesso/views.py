@@ -5,10 +5,6 @@ from django.utils import timezone
 from django.contrib import messages
 
 
-def chacara_bom_sucesso(request):
-    	return render(request, 'chacara_bom_sucesso/chacara_bom_sucesso.html')
-
-
 def index(request):
     if request.method == 'POST':
         # Limpar registros anteriores
