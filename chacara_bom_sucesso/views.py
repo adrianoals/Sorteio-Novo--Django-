@@ -86,4 +86,8 @@ def exportar_para_excel(request):
 
 
 def zerar(request):
-    	return render(request, 'chacara_bom_sucesso/zerar.html')
+    if request.method == 'POST':
+        Sorteio.objects.all().delete()
+        return redirect('index')
+    else:
+        return render(request, 'chacara_bom_sucesso/zerar.html')
