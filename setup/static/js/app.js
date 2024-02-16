@@ -1,30 +1,30 @@
-// document.addEventListener('DOMContentLoaded', function () {
-//     // Espera que o DOM esteja completamente carregado
+document.addEventListener('DOMContentLoaded', function() {
+    revelarLinhasProgressivamente();
+});
 
-//     // Obtém referências aos elementos HTML
-//     var titulo = document.getElementById('titulo');
-//     var botaoIniciar = document.getElementById('botao-iniciar');
-//     var containerSorteio = document.getElementById('container-sorteio');
-//     var formularioPresenca = document.getElementById('formulario-presenca');
+function revelarLinhasProgressivamente() {
+    const linhas = document.querySelectorAll('.linha-apartamento');
+    const loadingContainer = document.getElementById('loadingContainer'); // Certifique-se de que este ID corresponde ao seu HTML
 
-//     // Verifica se os elementos foram encontrados
-//     if (!titulo || !botaoIniciar || !containerSorteio || !formularioPresenca) {
-//         console.log('Um ou mais elementos não foram encontrados');
-//         return;
-//     }
+    if (linhas.length > 0) {
+        linhas.forEach((linha, index) => {
+            setTimeout(() => {
+                linha.style.opacity = 1; // Faz a linha aparecer
+                linha.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
-//     // Adiciona um ouvinte de clique ao botão "Iniciar"
-//     botaoIniciar.addEventListener('click', function () {
-//         console.log('O botão foi clicado');  // Verifica se o evento de clique está funcionando
-
-//         // Atualiza o conteúdo do <h1> antes de iniciar o sorteio
-//         titulo.textContent = 'INICIANDO SORTEIO!';
-
-//         // Altera o conteúdo da div container-sorteio
-//         containerSorteio.innerHTML = '<h5 class="mt-3 mb-3 font_subtitle text-dark">LISTA DE PRESENÇA:</h5>';
-
-//         // Torna o formulário de presença visível
-//         formularioPresenca.style.display = 'block';
-//     });
-// });
+                // Se for a última linha, ajusta o scroll para o final e esconde a animação de carregamento
+                if (index === linhas.length - 1) {
+                    setTimeout(() => {
+                        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                        // Esconde a animação de carregamento e o container
+                        loadingContainer.style.display = 'none';
+                    }, 500); // Tempo adicional para a última linha ser revelada antes de esconder a animação
+                }
+            }, index * 500); // Intervalo entre a revelação de cada linha
+        });
+    } else {
+        // Se não houver linhas, esconde a animação imediatamente
+        loadingContainer.style.display = 'none';
+    }
+}
 
