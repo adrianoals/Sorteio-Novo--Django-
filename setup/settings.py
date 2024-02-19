@@ -27,12 +27,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-# ALLOWED_HOSTS = []
+DEBUG = True
+ALLOWED_HOSTS = []
 
 
-DEBUG = False
-ALLOWED_HOSTS = ['18.117.94.6', 'sorteionovo.com.br', 'www.sorteionovo.com.br']
+# DEBUG = False
+# ALLOWED_HOSTS = ['18.117.94.6', 'sorteionovo.com.br', 'www.sorteionovo.com.br']
 
 
 # Application definition
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'sorteio_novo.apps.SorteioNovoConfig',
     'sorteio_novo_institucional.apps.SorteioNovoInstitucionalConfig',
     'chacara_bom_sucesso.apps.ChacaraBomSucessoConfig',
+    'nova_colina.apps.NovaColinaConfig',
 ]
 
 MIDDLEWARE = [
