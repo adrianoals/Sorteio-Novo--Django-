@@ -91,3 +91,10 @@ footer{
     width: 500px; /* Ajuste conforme o tamanho desejado do GIF */
     height: auto; /* Mantém a proporção do GIF */
 }
+
+/* arquivo: static/css/estilo.css */
+.filtro-destacado {
+    background-color: #f8f9fa;
+    border: 2px solid #007bff;
+    border-radius: 0.25rem;
+}
