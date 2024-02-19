@@ -109,3 +109,17 @@ def excel_nova_colina(request):
     wb.save(response)
 
     return response
+
+
+def filtro_apartamento(request):
+    apartamentos_disponiveis = Apartamento.objects.all()  # Adiciona esta linha
+    numero_apartamento = request.GET.get('apartamento')
+    resultados_filtrados = None
+    if numero_apartamento:
+        resultados_filtrados = Sorteio.objects.filter(apartamento__numero_apartamento=numero_apartamento)
+    
+    return render(request, 'nova_colina/nv_qrcode.html', {
+        'resultados_filtrados': resultados_filtrados,
+        'apartamento_selecionado': numero_apartamento,
+        'apartamentos_disponiveis': apartamentos_disponiveis,  # Certifique-se de adicionar esta linha
+    })
