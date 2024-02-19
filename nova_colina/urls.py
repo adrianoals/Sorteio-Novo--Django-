@@ -1,8 +1,9 @@
 from django.urls import path
-from nova_colina.views import nova_colina
+from nova_colina.views import nova_colina, zerar, excel_nova_colina
 
 urlpatterns = [
         path('nova-colina', nova_colina, name='nova_colina'), 
-        # path('exportar_para_excel/', exportar_para_excel, name='exportar_para_excel'),
+        path('excel_nova_colina/', excel_nova_colina, name='excel_nova_colina'),
+        path('nova-colina-zerar/', zerar, name='zerar'),
 
 ]

@@ -42,58 +42,70 @@ def nova_colina(request):
             pass
         
         # Marcar na sessão que o sorteio foi iniciado e armazenar o horário de conclusão
-        request.session['sorteio_iniciado'] = True
-        request.session['horario_conclusao'] = timezone.localtime().strftime("%d/%m/%Y às %Hh e %Mmin e %Ss")
+        request.session['sorteio_iniciado_nc'] = True
+        request.session['horario_conclusao_nc'] = timezone.localtime().strftime("%d/%m/%Y às %Hh e %Mmin e %Ss")
 
         # Redirecionar para a mesma página para mostrar os resultados do sorteio
         return redirect('nova_colina')
     
     else:
         # Verificar se o sorteio já foi iniciado
-        sorteio_iniciado = request.session.get('sorteio_iniciado', False)
-        resultados_sorteio = Sorteio.objects.select_related('apartamento', 'vaga_simples', 'vaga_dupla').all()
-        vagas_atribuidas = resultados_sorteio.exists()  # Verificar se existem resultados
+        sorteio_iniciado_nc = request.session.get('sorteio_iniciado', False)
+        resultados_sorteio_nc = Sorteio.objects.select_related('apartamento', 'vaga_simples', 'vaga_dupla').all()
+        vagas_atribuidas_nc = resultados_sorteio_nc.exists()  # Verificar se existem resultados
 
         return render(request, 'nova_colina/nova_colina.html', {
-            'resultados_sorteio': resultados_sorteio,
-            'vagas_atribuidas': vagas_atribuidas,
-            'sorteio_iniciado': sorteio_iniciado,
-            'horario_conclusao': request.session.get('horario_conclusao', '')
+            'resultados_sorteio_nc': resultados_sorteio_nc,
+            'vagas_atribuidas_nc': vagas_atribuidas_nc,
+            'sorteio_iniciado_nc': sorteio_iniciado_nc,
+            'horario_conclusao_nc': request.session.get('horario_conclusao', '')
         })
 
 
+def zerar(request):
+    if request.method == 'POST':
+        Sorteio.objects.all().delete()
+        return redirect('nova_colina')
+    else:
+        return render(request, 'nova_colina/zerar.html')
 
-# from openpyxl import load_workbook
-# from django.http import HttpResponse
-# from django.conf import settings
-# from .models import Sorteio
 
-# def exportar_para_excel(request):
-#     # Construir o caminho completo para o arquivo modelo
-#     caminho_modelo = 'static/assets/modelos/sorteio_novo1.xlsx' 
+from openpyxl import load_workbook
+from django.http import HttpResponse
+from django.utils import timezone
+from .models import Sorteio
 
-#     # Carregar o workbook do modelo
-#     wb = load_workbook(caminho_modelo)
-#     ws = wb.active
+def excel_nova_colina(request):
+    # Construir o caminho completo para o arquivo modelo
+    caminho_modelo = 'static/assets/modelos/sorteio_novo2.xlsx' 
 
-#     # Obter os resultados do sorteio
-#     resultados_sorteio = Sorteio.objects.select_related('apartamento', 'vaga').all()
+    # Carregar o workbook do modelo
+    wb = load_workbook(caminho_modelo)
+    ws = wb.active
 
-#     # Supondo que você queira começar a inserir os dados a partir da linha 2
-#     linha = 10
-#     for sorteio in resultados_sorteio:
-#         # Ajuste as colunas conforme a estrutura do seu arquivo modelo
-#         ws[f'C{linha}'] = sorteio.apartamento.numero_apartamento
-#         ws[f'D{linha}'] = sorteio.apartamento.bloco.bloco
-#         ws[f'E{linha}'] = sorteio.vaga.vaga
-#         linha += 1
+    # Obter os resultados do sorteio
+    resultados_sorteio_nc = Sorteio.objects.select_related('apartamento', 'vaga_simples', 'vaga_dupla').all()
 
-#     # Preparar a resposta para enviar o arquivo
-#     response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-#     nome_arquivo = "resultado_sorteio.xlsx"
-#     response['Content-Disposition'] = f'attachment; filename={nome_arquivo}'
+    # Recuperar o horário de conclusão do sorteio da sessão
+    horario_conclusao_nc = request.session.get('horario_conclusao', 'Horário não disponível')
 
-#     # Salvar o workbook modificado no response
-#     wb.save(response)
+    # Escrever o horário de conclusão na célula C8
+    ws['C8'] = f"Sorteio realizado em: {horario_conclusao_nc}"
 
-#     return response
+    # Supondo que você queira começar a inserir os dados a partir da linha 10
+    linha = 10
+    for sorteio in resultados_sorteio_nc:
+        ws[f'C{linha}'] = sorteio.apartamento.numero_apartamento
+        ws[f'E{linha}'] = sorteio.vaga_simples.vaga_simples
+        ws[f'F{linha}'] = sorteio.vaga_dupla.vaga_dupla
+        linha += 1
+
+    # Preparar a resposta para enviar o arquivo
+    response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    nome_arquivo = "resultado_sorteio.xlsx"
+    response['Content-Disposition'] = f'attachment; filename={nome_arquivo}'
+
+    # Salvar o workbook modificado no response
+    wb.save(response)
+
+    return response

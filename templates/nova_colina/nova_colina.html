@@ -25,10 +25,10 @@
         </div>
         {% endif %}
 
-        {% if resultados_sorteio %}
+        {% if resultados_sorteio_nc %}
         <div class="resultados mt-4">
             <h2 class="text-center mb-4">Resultados do Sorteio</h2>
-            {% for sorteio in resultados_sorteio %}
+            {% for sorteio in resultados_sorteio_nc %}
             <div class="row g-3 mt-3 linha-apartamento">
                 <div class="col-sm-4">
                     <label class="form-label text-dark">Apartamento</label>
@@ -45,18 +45,18 @@
             </div>
             {% endfor %}
         </div>
-        {% elif sorteio_iniciado %}
+        {% elif sorteio_iniciado_nc %}
         <div class="text-center mt-5">
             <p>Nenhum resultado disponível. O sorteio está em andamento.</p>
         </div>
         {% endif %}
 
-        {% comment %} {% if vagas_atribuidas %}
+        {% if vagas_atribuidas_nc %}
             <div class="text-center text-dark mt-5 mb-5">
                 <h5>Sorteio finalizado {{ request.session.horario_conclusao }}.</h5>
-                <a href="{% url 'exportar_para_excel' %}" class="btn btn-info mt-3">Exportar para Excel</a>
+                <a href="{% url 'excel_nova_colina' %}" class="btn btn-info mt-3">Exportar para Excel</a>
             </div>
-        {% endif %} {% endcomment %}
+        {% endif %}
     </div>
 </main>
 
