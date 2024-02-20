@@ -92,3 +92,16 @@ footer{
     height: auto; /* Mantém a proporção do GIF */
 }
 
+.filtro-destacado {
+    background-color: #e9ecef; /* Um cinza claro para contraste suave */
+    border: 2px solid #007bff; /* Cor da borda azul para destaque */
+    border-radius: 0.25rem; /* Arredondamento da borda */
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.25); /* Sombra para profundidade */
+}
+
+.filtro-destacado:focus {
+    background-color: #e9ecef; /* Mantém a cor de fundo mesmo em foco */
+    border: 2px solid #0056b3; /* Uma cor de borda um pouco mais escura em foco */
+    outline: none; /* Remove o contorno padrão para elementos em foco */
+    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.5); /* Sombra mais pronunciada em foco */
+}
