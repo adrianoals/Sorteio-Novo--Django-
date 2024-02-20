@@ -35,12 +35,11 @@
             </div>
         </div>
         {% if resultados_filtrados %}
-            <div class="resultados-filtrados mt-4 text-dark text-center">
-                <h3 class="text-center mb-4">Vagas para o Apartamento {{ apartamento_selecionado }}</h3>
+            <div class="resultados-filtrados mt-2 text-dark text-center">
+                <h3 class="text-center mb-4">Vagas para o {{ apartamento_selecionado }}</h3>
                 {% for sorteio in resultados_filtrados %}
                     <!-- Exibir informações da vaga aqui -->
-                    <h5>Vaga Simples: {{ sorteio.vaga_simples.vaga_simples }}</h5>
-                    <h5 class="mb-5">Vaga Dupla: {{ sorteio.vaga_dupla.vaga_dupla }}</h5>
+                    <h5>{{ sorteio.vagas.vagas}}</h5>
                 {% endfor %}
             </div>
         {% endif %}

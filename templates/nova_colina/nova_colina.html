@@ -35,13 +35,13 @@
                     <input type="text" class="form-control" value="{{ sorteio.apartamento.numero_apartamento }}" readonly>
                 </div>
                 <div class="col-sm-4">
-                    <label class="form-label text-dark">Vaga Simples</label>
-                    <input type="text" class="form-control" value="{{ sorteio.vaga_simples.vaga_simples }}" readonly>
+                    <label class="form-label text-dark">Vagas</label>
+                    <input type="text" class="form-control" value="{{ sorteio.vagas.vagas }}" readonly>
                 </div>
-                <div class="col-sm-4">
+                {% comment %} <div class="col-sm-4">
                     <label class="form-label text-dark">Vaga Dupla</label>
                     <input type="text" class="form-control" value="{{ sorteio.vaga_dupla.vaga_dupla }}" readonly>
-                </div>
+                </div> {% endcomment %}
             </div>
             {% endfor %}
         </div>
@@ -53,7 +53,7 @@
 
         {% if vagas_atribuidas_nc %}
             <div class="text-center text-dark mt-5 mb-5">
-                <h5>Sorteio finalizado {{ request.session.horario_conclusao }}.</h5>
+                <h5>Sorteio finalizado {{ request.session.horario_conclusao_nc }}.</h5>
                 <a href="{% url 'excel_nova_colina' %}" class="btn btn-info mt-3">Exportar para Excel</a>
             </div>
             <div class="text-center mt-5">
