@@ -56,7 +56,12 @@
                 <h5>Sorteio finalizado {{ request.session.horario_conclusao }}.</h5>
                 <a href="{% url 'excel_nova_colina' %}" class="btn btn-info mt-3">Exportar para Excel</a>
             </div>
+            <div class="text-center mt-5">
+                <img src="{% static '/assets/images/qrcode.png' %}" alt="QR Code" style="max-width: 200px;"/>
+                <p class="text-dark">Escaneie o QR Code para acessar seu resultado.</p>
+            </div>
         {% endif %}
+
     </div>
 </main>
 
