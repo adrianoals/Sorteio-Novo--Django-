@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'sorteio_novo_institucional.apps.SorteioNovoInstitucionalConfig',
     'chacara_bom_sucesso.apps.ChacaraBomSucessoConfig',
     'nova_colina.apps.NovaColinaConfig',
+    'assincon.apps.AssinconConfig',
 ]
 
 MIDDLEWARE = [
