@@ -12,7 +12,29 @@
                     <a href="{% url 'presenca' %}" class="btn btn-primary rounded-pill" id="botao-iniciar">Iniciar</a>
                 </div>
             </div>
-
+            
+            {% if brinde_ok %}
+                <div class="row g-3 mt-4">
+                    <div class="col-sm-4">
+                        <label for="nome" class="form-label text-dark">Nome</label>
+                        <input type="text" class="form-control" id="apartamento" value="{{ brinde_ok.nome }}" readonly>
+                    </div>
+                    <div class="col-sm-4">
+                        <form method="post" name="confirmar_brinde">
+                            {% csrf_token %}
+                            <input type="hidden" name="brinde_id" value="{{ brinde_ok.id }}">
+                            <label for="vaga" class="form-label text-dark">Brinde Escolhido</label>
+                            <select class="form-control" id="brinde" name="brinde_escolhido">
+                                <option value="">Brinde!</option>
+                                {% for brinde in vagas_disponiveis %}
+                                    <option value="{{ vaga }}">{{ vaga }}</option>
+                                {% endfor %}
+                            </select>
+                            <button type="submit" class="btn btn-primary rounded-pill mt-4 mb-4">Confirmar Vaga</button>
+                        </form>
+                    </div>
+                </div>
+            {% endif %}
         </main>
 
 
