@@ -5,7 +5,7 @@ from django.utils import timezone
 from django.contrib import messages
 
     
-def index(request):
+def cbs_index(request):
     if request.method == 'POST':
         # Limpar registros anteriores
         Sorteio.objects.all().delete()
@@ -49,55 +49,20 @@ def index(request):
             if resultados_sorteio:
                 vagas_atribuidas = True
 
-        return render(request, 'chacara_bom_sucesso/index.html', {
+        return render(request, 'chacara_bom_sucesso/cbs_index.html', {
             'resultados_sorteio': resultados_sorteio,
             'vagas_atribuidas': vagas_atribuidas,
             'sorteio_iniciado': sorteio_iniciado,
             'horario_conclusao': request.session.get('horario_conclusao', '')
         })
 
-# from openpyxl import load_workbook
-# from django.http import HttpResponse
-# from django.conf import settings
-# from .models import Sorteio
 
-# def exportar_para_excel(request):
-#     # Construir o caminho completo para o arquivo modelo
-#     caminho_modelo = 'static/assets/modelos/sorteio_novo1.xlsx' 
-
-#     # Carregar o workbook do modelo
-#     wb = load_workbook(caminho_modelo)
-#     ws = wb.active
-
-#     # Obter os resultados do sorteio
-#     resultados_sorteio = Sorteio.objects.select_related('apartamento', 'vaga').all()
-
-#     # Supondo que você queira começar a inserir os dados a partir da linha 2
-#     linha = 10
-#     for sorteio in resultados_sorteio:
-#         # Ajuste as colunas conforme a estrutura do seu arquivo modelo
-#         ws[f'C{linha}'] = sorteio.apartamento.numero_apartamento
-#         ws[f'D{linha}'] = sorteio.apartamento.bloco.bloco
-#         ws[f'E{linha}'] = sorteio.vaga.vaga
-#         linha += 1
-
-#     # Preparar a resposta para enviar o arquivo
-#     response = HttpResponse(content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
-#     nome_arquivo = "resultado_sorteio.xlsx"
-#     response['Content-Disposition'] = f'attachment; filename={nome_arquivo}'
-
-#     # Salvar o workbook modificado no response
-#     wb.save(response)
-
-#     return response
-
-
-def zerar(request):
+def cbs_zerar(request):
     if request.method == 'POST':
         Sorteio.objects.all().delete()
         return redirect('index')
     else:
-        return render(request, 'chacara_bom_sucesso/zerar.html')
+        return render(request, 'chacara_bom_sucesso/cbs_zerar.html')
 
 
 from openpyxl import load_workbook
@@ -105,7 +70,7 @@ from django.http import HttpResponse
 from django.utils import timezone
 from .models import Sorteio
 
-def exportar_para_excel(request):
+def cbs_exportar_para_excel(request):
     # Construir o caminho completo para o arquivo modelo
     caminho_modelo = 'static/assets/modelos/sorteio_novo1.xlsx' 
 
