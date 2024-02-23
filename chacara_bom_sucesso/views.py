@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Apartamento, Sorteio, Vaga
 import random
 from django.utils import timezone
@@ -60,7 +60,7 @@ def cbs_index(request):
 def cbs_zerar(request):
     if request.method == 'POST':
         Sorteio.objects.all().delete()
-        return redirect('index')
+        return redirect('cbs_index')
     else:
         return render(request, 'chacara_bom_sucesso/cbs_zerar.html')
 
@@ -105,15 +105,19 @@ def cbs_exportar_para_excel(request):
 
     return response
 
+
 def cbs_filtro_apartamento(request):
-    apartamentos_disponiveis = Apartamento.objects.all()  # Adiciona esta linha
-    numero_apartamento = request.GET.get('apartamento')
+    apartamentos_disponiveis = Apartamento.objects.all()
+    apartamento_id = request.GET.get('apartamento')  # Este agora é o ID do apartamento
+
     resultados_filtrados = None
-    if numero_apartamento:
-        resultados_filtrados = Sorteio.objects.filter(apartamento__numero_apartamento=numero_apartamento)
+    apartamento_selecionado = None
+    if apartamento_id:
+        apartamento_selecionado = get_object_or_404(Apartamento, id=apartamento_id)
+        resultados_filtrados = Sorteio.objects.filter(apartamento=apartamento_selecionado)
     
-    return render(request, 'nova_colina/nv_qrcode.html', {
+    return render(request, 'chacara_bom_sucesso/cbs_qrcode.html', {
         'resultados_filtrados': resultados_filtrados,
-        'apartamento_selecionado': numero_apartamento,
-        'apartamentos_disponiveis': apartamentos_disponiveis,  # Certifique-se de adicionar esta linha
+        'apartamento_selecionado': apartamento_selecionado,
+        'apartamentos_disponiveis': apartamentos_disponiveis,
     })
