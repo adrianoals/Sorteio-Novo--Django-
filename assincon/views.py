@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import ListaSindicos, Sorteio
 from django.contrib import messages
 import random
@@ -21,3 +21,11 @@ def assincon_sorteio(request):
         "sindico_selecionado": sindico_selecionado,  # Passando o objeto para o template
         "sindicos_disponiveis": sindicos_disponiveis
     })
+
+
+def assincon_lista(request):
+    sindicos = ListaSindicos.objects.all()
+    return render(request, 'assincon/assincon_lista.html', {'sindicos': sindicos})
+    
+
+
