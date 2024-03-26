@@ -36,7 +36,7 @@ body {
 #container-sorteio {
     background-color: white;
     border-radius: 25px;
-    min-height: 250px;
+    min-height: 500px;
     margin-left: 20px;
     margin-right: 20px;
     /* background-image: url('/static/assets/images/teste.png'); */
@@ -137,7 +137,8 @@ body {
     margin: 0 0 0;
 }
 
-
-
+text-purple{
+    color: #5E17EB;
+}
 
 
