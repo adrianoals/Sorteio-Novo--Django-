@@ -28,6 +28,7 @@ document.querySelector('[type="submit"]').addEventListener('click', function(eve
     iniciarSorteio();
 });
 
+<<<<<<< HEAD
 
 
 
@@ -60,3 +61,5 @@ document.querySelector('[type="submit"]').addEventListener('click', function(eve
 //     iniciarSorteio();
 // });
 
+=======
+>>>>>>> 02cd17ee0a93da035ce08f563bf5215827b7eb24

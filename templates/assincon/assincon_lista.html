@@ -1,0 +1,37 @@
+{% extends 'assincon/assincon_base.html' %}
+{% load static %}
+{% block content %}
+
+        <div class="container">
+            <h1 class="fw-normal lh-1 text-center mb-5" id="titulo">SORTEIO NOVO!</h1>
+        </div>
+        
+        <main>
+
+        <div class="p-4" id="container-sorteio">
+            <h1 class="mb-5  text-center text-dark mt-5">LISTA DE SÍNDICOS PRESENTES!</h1>
+            <div class="row">
+
+                {% for sindico in sindicos %}
+                <div class="col-4">
+                    <label for="sindico" id="labelSindico" class="form-label text-dark mb-2">Síndico</label>
+                    <input type="text" class="form-control mb-4" id="sindico" value="{{ sindico.nome }}" readonly>
+                </div>
+                <div class="col-3 mt-4 pt-2">
+                    <button type="button" class="btn btn-warning">Editar</button>
+                    <button type="button" class="btn btn-danger">Remover</button>
+                    <button type="button" class="btn btn-primary">Confirmar</button>
+                </div>
+                <div class="col-5 mt-4 pt-2">
+                </div>
+                {% endfor %}
+            </div>
+
+            <div>
+                <button type="submit" class="btn btn-info mt-4 mb-4">Adicionar</button>
+            </div>
+        </div>
+
+        </main>
+{% endblock %} 
+
